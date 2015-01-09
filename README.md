@@ -5,11 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
 [![Platform](https://img.shields.io/cocoapods/p/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
 
+# TL;DR;
+
+<img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot.gif" alt="" style="max-width:100%;" width="186px">
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 

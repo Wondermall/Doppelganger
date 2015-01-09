@@ -10,29 +10,24 @@
 Pod::Spec.new do |s|
   s.name             = "Doppelganger"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Doppelganger."
+  s.summary          = "Array diffs. With no hands."
   s.description      = <<-DESC
-                       An optional longer description of Doppelganger
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                        Are you still using `reloadData` with collection or table
+                        view because figuring out transfomration is too hard?
+                        Worry no more! This utility takes two arrays: an old and
+                        a new one and returns a set of diffs that you feed directly
+                        to your collection or table view.
+                        Happy users, seeing data mutation animating in front of their
+                        eyes, less hassle for you!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Doppelganger"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "http://github.com/Wondermall/Doppelganger"
   s.license          = 'MIT'
   s.author           = { "Sash Zats" => "sash@zats.io" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/Doppelganger.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/Wondermall/Doppelganger.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/zats'
 
-  s.platform     = :ios, '7.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
-  s.resource_bundles = {
-    'Doppelganger' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Foundation'
 end
