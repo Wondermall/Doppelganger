@@ -1,17 +1,67 @@
 # Doppelganger
 
-[![CI Status](http://img.shields.io/travis/Sash Zats/Doppelganger.svg?style=flat)](https://travis-ci.org/Sash Zats/Doppelganger)
+[![CI Status](https://travis-ci.org/Wondermall/Doppelganger.svg)](https://travis-ci.org/Wondermall/Doppelganger)
 [![Version](https://img.shields.io/cocoapods/v/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
 [![License](https://img.shields.io/cocoapods/l/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
 [![Platform](https://img.shields.io/cocoapods/p/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
 
 # TL;DR;
 
-<img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot.gif" alt="" style="max-width:100%;" width="186px">
+Effortless transition from the bad ux (on the left) to awesome (on the right)
+
+<img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot_bad.gif" alt="bad ux" style="max-width:100%;" width="186px">
+<img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot.gif" alt="good ux" style="max-width:100%;" width="186px">
+
+## Problems it solves
+
+* Calculating mutations is too hard and you're just calling `reloadData` on your collection or table view? 
+* Users, confused where did that row disappear?
+* Rows, jumping out of nowhere?
+* Lost scroll position?
+
+Doppelganger is here to help!
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```objectivec
+NSArray *oldDataSource = self.dataSource;
+self.dataSource = [self _updatedDataSource];
+NSArray *diffs = [WMLArrayDiffUtility diffForPreviousArray:oldDataSource 
+                                              currentArray:self.dataSource];
+
+[self.tableView beginUpdates];
+for (WMLArrayDiff *diff in diffs) {
+    switch (diff.type) {
+        case WMLArrayDiffTypeMove: {
+            [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:diff.previousIndex inSection:0]
+                                   toIndexPath:[NSIndexPath indexPathForRow:diff.currentIndex inSection:0]];
+            break;
+        }
+        case WMLArrayDiffTypeDelete: {
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:diff.previousIndex inSection:0]]
+                                  withRowAnimation:UITableViewRowAnimationRight];
+            break;
+        }
+        case  WMLArrayDiffTypeInsert: {
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:diff.currentIndex inSection:0]]
+                                  withRowAnimation:UITableViewRowAnimationLeft];
+            break;
+        }
+    }
+}
+[self.tableView endUpdates];
+```
+
+## Implementation details
+
+* Currently, doppelganger supports only array of unique elements, e.g. if you have duplicated elements in your array, result is unpredictable.
+* If you are using custom classes, make sure that it implements correctly `isEqual:` and `hash` methods: [http://nshipster.com/equality/](http://nshipster.com/equality/)
+
+## TODOs
+
+* Improve on O(n<sup>2</sup>) when calculating moved elements.
+* Abstract API from `NSArray`.
+* Your issue / pull request.
 
 ## Installation
 
