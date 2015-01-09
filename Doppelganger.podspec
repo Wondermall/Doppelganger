@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Doppelganger"
-  s.version          = "0.1.0"
+  s.version          = "1.0"
   s.summary          = "Array diffs. With no hands."
   s.description      = <<-DESC
                         Are you still using `reloadData` with collection or table
