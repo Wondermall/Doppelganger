@@ -7,10 +7,26 @@
 
 # TL;DR;
 
-Effortless transition from the bad ux (on the left) to awesome (on the right)
+<table>
+<tr>
+    <td>
+        <img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot_bad.gif" alt="bad ux" style="max-width:100%;" width="186px">
+    </td>
+    <td>
+        <img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot.gif" alt="good ux" style="max-width:100%;" width="186px">
+    </td>
+</tr>
+<tr>
+    <td>
+        Bad UX
+    </td>
+    <td>
+        Good UX<sup>1</sup>
+    </td>
+</tr>
+</table>
 
-<img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot_bad.gif" alt="bad ux" style="max-width:100%;" width="186px">
-<img src="https://raw.githubusercontent.com/Wondermall/Doppelganger/master/Screenshot.gif" alt="good ux" style="max-width:100%;" width="186px">
+<sup>1</sup>: Good UX slowed down intentionally to demonstrate the awesomeness
 
 ## Problems it solves
 
