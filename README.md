@@ -42,8 +42,8 @@ Doppelganger is here to help!
 ```objectivec
 NSArray *oldDataSource = self.dataSource;
 self.dataSource = [self _updatedDataSource];
-NSArray *diffs = [WMLArrayDiffUtility diffForPreviousArray:oldDataSource 
-                                              currentArray:self.dataSource];
+NSArray *diffs = [WMLArrayDiffUtility diffForCurrentArray:self.dataSource
+                                            previousArray:oldDataSource];
 
 [self.tableView beginUpdates];
 for (WMLArrayDiff *diff in diffs) {

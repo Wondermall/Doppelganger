@@ -10,7 +10,7 @@
 
 @interface WMLArrayDiffUtility : NSObject
 
-+ (NSArray *)diffForPreviousArray:(NSArray *)previousArray currentArray:(NSArray *)currentArray;
++ (NSArray *)diffForCurrentArray:(NSArray *)currentArray previousArray:(NSArray *)previousArray;
 
 @property (nonatomic, copy, readonly) NSArray *previousArray;
 
@@ -22,8 +22,7 @@
  */
 @property (nonatomic, copy, readonly) NSArray /* WMLArrayDiff */ *diff;
 
-- (instancetype)initWithPreviousArray:(NSArray *)previousArray
-                         currentArray:(NSArray *)currentArray NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCurrentArray:(NSArray *)currentArray previousArray:(NSArray *)previousArray;
 
 - (void)performDiff;
 

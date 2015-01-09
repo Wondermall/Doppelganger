@@ -30,7 +30,7 @@
 
 - (void)_updateDataSource {
     NSArray *newDataSource = [self _randomWords];
-    NSArray *diff = [WMLArrayDiffUtility diffForPreviousArray:self.dataSource currentArray:newDataSource];
+    NSArray *diff = [WMLArrayDiffUtility diffForCurrentArray:newDataSource previousArray:self.dataSource];
     self.dataSource = newDataSource;
     
     // when we update table view, data source should be already updated

@@ -66,21 +66,19 @@ describe(@"Array Diff Utility", ^{
     context(@"no changes", ^{
         it(@"should result in no diffs", ^{
             
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @1, @2, @3 ];
+            NSArray *current = @[ @1, @2, @3 ];
+            NSArray *previous = @[ @1, @2, @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
-            [utility performDiff];
-            expect(utility.diff).to.beEmpty();
+            expect([WMLArrayDiffUtility diffForCurrentArray:current previousArray:previous]).to.beEmpty();
         });
     });
     
     context(@"insertion", ^{
         it(@"at the end", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @1, @2, @3, @4, @5 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @1, @2, @3, @4, @5 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(2);
@@ -97,10 +95,10 @@ describe(@"Array Diff Utility", ^{
         });
         
         it(@"at the beginning", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @-1, @0, @1, @2, @3 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @-1, @0, @1, @2, @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(2);
@@ -117,10 +115,10 @@ describe(@"Array Diff Utility", ^{
         });
         
         it(@"in the middle", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @1, @2, @2.5, @2.7, @3 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @1, @2, @2.5, @2.7, @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(2);
@@ -137,10 +135,10 @@ describe(@"Array Diff Utility", ^{
         });
         
         it(@"at random position", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @1, @"foo", @2, @"bar", @3 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @1, @"foo", @2, @"bar", @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(2);
@@ -159,10 +157,10 @@ describe(@"Array Diff Utility", ^{
     
     context(@"deletion", ^{
         it(@"in the beginning", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @3 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(2);
@@ -179,10 +177,10 @@ describe(@"Array Diff Utility", ^{
         });
         
         it(@"at the end", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @1 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @1 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(2);
@@ -199,10 +197,10 @@ describe(@"Array Diff Utility", ^{
         });
         
         it(@"in the middle", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @1, @3 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @1, @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(1);
@@ -216,10 +214,10 @@ describe(@"Array Diff Utility", ^{
     
     context(@"insertion and deletion", ^{
        it(@"overlapping", ^{
-           NSArray *left = @[ @1, @2, @3, @4 ];
-           NSArray *right = @[ @"foo", @2, @3, @"bar" ];
+           NSArray *previous = @[ @1, @2, @3, @4 ];
+           NSArray *current = @[ @"foo", @2, @3, @"bar" ];
            
-           WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+           WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
            [utility performDiff];
            
            expect(utility.diff).to.haveCountOf(4); // 2 deletion + 2 insertion
@@ -246,10 +244,10 @@ describe(@"Array Diff Utility", ^{
         });
 
         it(@"not overlapping", ^{
-            NSArray *left = @[ @1, @2, @3, @4 ];
-            NSArray *right = @[ @2, @"foo", @3 ];
+            NSArray *previous = @[ @1, @2, @3, @4 ];
+            NSArray *current = @[ @2, @"foo", @3 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(3); // 2 deletion + 1 insertion
@@ -273,10 +271,10 @@ describe(@"Array Diff Utility", ^{
     
     context(@"moving", ^{
         it(@"shuffling", ^{
-            NSArray *left = @[ @1, @2, @3 ];
-            NSArray *right = @[ @3, @1, @2 ];
+            NSArray *previous = @[ @1, @2, @3 ];
+            NSArray *current = @[ @3, @1, @2 ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
             
             expect(utility.diff).to.haveCountOf(3);
@@ -303,10 +301,10 @@ describe(@"Array Diff Utility", ^{
     
     context(@"mixed", ^{
        it(@"deletion, insertion and moving", ^{
-           NSArray *left = @[ @1, @2, @3 ];
-           NSArray *right = @[ @3, @2, @5 ];
+           NSArray *previous = @[ @1, @2, @3 ];
+           NSArray *current = @[ @3, @2, @5 ];
            
-           WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+           WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
            [utility performDiff];
            
            expect(utility.diff).to.haveCountOf(3); // 1 deletion + 1 insertion + 1 moving
@@ -332,19 +330,19 @@ describe(@"Array Diff Utility", ^{
     context(@"custom object, implementing isEqual:", ^{
         it(@"deletion, insertion and moving", ^{
             
-            NSArray *left = @[
+            NSArray *previous = @[
                 [CustomObject customObjectWithString:@"a"],
                 [CustomObject customObjectWithString:@"b"],
                 [CustomObject customObjectWithString:@"c"]
             ];
             
-            NSArray *right = @[
+            NSArray *current = @[
                 [CustomObject customObjectWithString:@"c"],
                 [CustomObject customObjectWithString:@"b"],
                 [CustomObject customObjectWithString:@"d"]
             ];
             
-            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithPreviousArray:left currentArray:right];
+            WMLArrayDiffUtility *utility = [[WMLArrayDiffUtility alloc] initWithCurrentArray:current previousArray:previous];
             [utility performDiff];
 
             expect(utility.diff).to.haveCountOf(3); // 1 deletion + 1 insertion + 1 moving

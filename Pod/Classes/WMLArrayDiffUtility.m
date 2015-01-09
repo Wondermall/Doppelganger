@@ -23,13 +23,13 @@
 
 @implementation WMLArrayDiffUtility
 
-+ (NSArray *)diffForPreviousArray:(NSArray *)previousArray currentArray:(NSArray *)currentArray {
-    WMLArrayDiffUtility *utility = [[self alloc] initWithPreviousArray:previousArray currentArray:currentArray];
++ (NSArray *)diffForCurrentArray:(NSArray *)currentArray previousArray:(NSArray *)previousArray {
+    WMLArrayDiffUtility *utility = [[self alloc] initWithCurrentArray:currentArray previousArray:previousArray];
     [utility performDiff];
     return utility.diff;
 }
 
-- (instancetype)initWithPreviousArray:(NSArray *)previousArray currentArray:(NSArray *)currentArray {
+- (instancetype)initWithCurrentArray:(NSArray *)currentArray previousArray:(NSArray *)previousArray {
     self = [super init];
     if (!self) {
         return nil;
@@ -40,7 +40,7 @@
 }
 
 - (instancetype)init {
-    return [self initWithPreviousArray:nil currentArray:nil];
+    return [self initWithCurrentArray:nil previousArray:nil];
 }
 
 - (void)performDiff {
