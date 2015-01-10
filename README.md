@@ -1,9 +1,9 @@
 # Doppelganger
 
-[![CI Status](https://travis-ci.org/Wondermall/Doppelganger.svg)](https://travis-ci.org/Wondermall/Doppelganger)
-[![Version](https://img.shields.io/cocoapods/v/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
-[![License](https://img.shields.io/cocoapods/l/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
-[![Platform](https://img.shields.io/cocoapods/p/Doppelganger.svg?style=flat)](http://cocoadocs.org/docsets/Doppelganger)
+[![Build Status](https://travis-ci.org/Wondermall/Doppelganger.svg?branch=master)](https://travis-ci.org/Wondermall/Doppelganger)
+[![Version](https://img.shields.io/cocoapods/v/Doppelganger.svg?style=flat-square)](http://cocoadocs.org/docsets/Doppelganger)
+[![License](https://img.shields.io/cocoapods/l/Doppelganger.svg?style=flat-square)](http://cocoadocs.org/docsets/Doppelganger)
+[![Platform](https://img.shields.io/cocoapods/p/Doppelganger.svg?style=flat-square)](http://cocoadocs.org/docsets/Doppelganger)
 
 # TL;DR;
 
