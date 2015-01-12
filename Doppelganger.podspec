@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "Doppelganger"
   s.version          = "1.0"
-  s.summary          = "Array diffs. With no hands."
+  s.summary          = "Array diffs as collection view wants it."
   s.description      = <<-DESC
                         Are you still using `reloadData` with collection or table
                         view because figuring out transfomration is too hard?
