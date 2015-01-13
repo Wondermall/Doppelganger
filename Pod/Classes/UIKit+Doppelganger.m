@@ -49,3 +49,38 @@ static NSString *const WMLArrayDiffDestinationIndexPathKey = @"WMLArrayDiffDesti
 }
 
 @end
+
+@implementation UITableView (Doppelganger)
+
+- (void)wml_applyBatchChanges:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation {
+    NSMutableArray *insertion = [NSMutableArray array];
+    NSMutableArray *deletion = [NSMutableArray array];
+    NSMutableArray *moving = [NSMutableArray array];
+    
+    for (WMLArrayDiff *diff in changes) {
+        switch (diff.type) {
+            case WMLArrayDiffTypeDelete:
+                [deletion addObject:[NSIndexPath indexPathForItem:diff.previousIndex inSection:section]];
+                break;
+                
+            case WMLArrayDiffTypeInsert:
+                [insertion addObject:[NSIndexPath indexPathForItem:diff.currentIndex inSection:section]];
+                break;
+                
+            case WMLArrayDiffTypeMove:
+                [moving addObject:diff];
+                break;
+        }
+    }
+    
+    [self beginUpdates];
+    [self deleteRowsAtIndexPaths:deletion withRowAnimation:animation];
+    [self insertRowsAtIndexPaths:insertion withRowAnimation:animation];
+        for (WMLArrayDiff *diff in moving) {
+            [self moveRowAtIndexPath:[NSIndexPath indexPathForItem:diff.previousIndex inSection:section]
+                         toIndexPath:[NSIndexPath indexPathForItem:diff.currentIndex inSection:section]];
+        }
+    [self endUpdates];
+}
+
+@end
