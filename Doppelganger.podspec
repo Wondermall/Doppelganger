@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/zats'
 
   s.requires_arc = true
-
-  s.source_files = 'Pod/Classes'
+  s.source_files = 'Pod/Classes/*.{h,m}'
+  s.ios.source_files = 'Pod/Classes/iOS/*.{h,m}'
+  s.osx.source_files = 'Pod/Classes/OSX/*.{h,m}'
   s.frameworks = 'Foundation'
 end
