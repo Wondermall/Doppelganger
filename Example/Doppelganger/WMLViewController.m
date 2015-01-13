@@ -11,7 +11,6 @@
 #import "WMLColoredNumber.h"
 #import <Doppelganger/Doppelganger.h>
 
-
 @interface WMLViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataSource;
@@ -42,26 +41,9 @@
 }
 
 - (void)_updateTableViewWithDiff:(NSArray *)array {
-    [self.tableView beginUpdates];
-    for (WMLArrayDiff *diff in array) {
-        switch (diff.type) {
-            case WMLArrayDiffTypeMove:
-                [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:diff.previousIndex inSection:0]
-                                       toIndexPath:[NSIndexPath indexPathForRow:diff.currentIndex inSection:0]];
-                break;
-                
-            case WMLArrayDiffTypeDelete:
-                [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:diff.previousIndex inSection:0]]
-                                      withRowAnimation:UITableViewRowAnimationRight];
-                break;
-                
-            case  WMLArrayDiffTypeInsert:
-                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:diff.currentIndex inSection:0]]
-                                      withRowAnimation:UITableViewRowAnimationLeft];
-                break;
-        }
-    }
-    [self.tableView endUpdates];
+    [self.tableView wml_applyBatchChanges:array
+                                inSection:0
+                         withRowAnimation:UITableViewRowAnimationRight];
 }
 
 #pragma mark - Private - Data generation
