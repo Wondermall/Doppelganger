@@ -8,3 +8,8 @@
 
 #import "WMLArrayDiffUtility.h"
 #import "WMLArrayDiff.h"
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+    #import "UIKit+Doppelganger.h"
+#elif TARGET_OS_MAC
+
+#endif
