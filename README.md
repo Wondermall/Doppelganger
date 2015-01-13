@@ -26,7 +26,7 @@
 </tr>
 </table>
 
-<sup>1</sup>: Good UX slowed down intentionally to demonstrate the awesomeness
+<sup>1</sup>: Slowed down intentionally to demonstrate the awesomeness
 
 ## Problems it solves
 
@@ -44,28 +44,9 @@ NSArray *oldDataSource = self.dataSource;
 self.dataSource = [self _updatedDataSource];
 NSArray *diffs = [WMLArrayDiffUtility diffForCurrentArray:self.dataSource
                                             previousArray:oldDataSource];
-
-[self.tableView beginUpdates];
-for (WMLArrayDiff *diff in diffs) {
-    switch (diff.type) {
-        case WMLArrayDiffTypeMove: {
-            [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:diff.previousIndex inSection:0]
-                                   toIndexPath:[NSIndexPath indexPathForRow:diff.currentIndex inSection:0]];
-            break;
-        }
-        case WMLArrayDiffTypeDelete: {
-            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:diff.previousIndex inSection:0]]
-                                  withRowAnimation:UITableViewRowAnimationRight];
-            break;
-        }
-        case  WMLArrayDiffTypeInsert: {
-            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:diff.currentIndex inSection:0]]
-                                  withRowAnimation:UITableViewRowAnimationLeft];
-            break;
-        }
-    }
-}
-[self.tableView endUpdates];
+[self.tableView wml_applyBatchChanges:array
+                            inSection:0
+                     withRowAnimation:UITableViewRowAnimationRight];
 ```
 
 ## Implementation details
