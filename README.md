@@ -44,7 +44,7 @@ NSArray *oldDataSource = self.dataSource;
 self.dataSource = [self _updatedDataSource];
 NSArray *diffs = [WMLArrayDiffUtility diffForCurrentArray:self.dataSource
                                             previousArray:oldDataSource];
-[self.tableView wml_applyBatchChanges:array
+[self.tableView wml_applyBatchChanges:diffs
                             inSection:0
                      withRowAnimation:UITableViewRowAnimationRight];
 ```
