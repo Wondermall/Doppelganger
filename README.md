@@ -53,7 +53,7 @@ NSArray *diffs = [WMLArrayDiffUtility diffForCurrentArray:self.dataSource
 
 * Currently, doppelganger supports only array of unique elements, e.g. if you have duplicated elements in your array, result is unpredictable.
 * If you are using custom classes, make sure that it implements correctly `isEqual:` and `hash` methods: [http://nshipster.com/equality/](http://nshipster.com/equality/)
-* Sections are not hanlded intentionally. From our experince sections are harder to match using strict equality + hashing. However, if this is your case, feel free to use Doppelganger for setions, too.
+* Sections are not handled intentionally. From our experience sections are harder to match using strict equality + hashing. However, if this is your case, feel free to use Doppelganger for sections, too.
 
 ## TODOs
 
