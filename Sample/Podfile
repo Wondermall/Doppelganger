@@ -1,0 +1,15 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+
+inhibit_all_warnings!
+
+target 'DoppelgangerSample' do
+	pod 'Doppelganger', :path => '../'
+end
+
+target 'DoppelgangerSampleTests' do
+	pod 'Specta', :git => 'https://github.com/specta/specta.git'
+	pod 'Expecta', '~> 0.3.1'
+end
+

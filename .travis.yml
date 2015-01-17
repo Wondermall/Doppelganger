@@ -4,12 +4,12 @@
 
 language: objective-c
 # cache: cocoapods
-podfile: Example/Podfile
+podfile: Sample/Podfile
 before_install:
-- gem install cocoapods # Since Travis is not always on latest version
-- pod install --project-directory=Example
+# - gem install cocoapods # Since Travis is not always on latest version
+- pod install --project-directory=Sample
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-- set -o pipefail && xcodebuild test -workspace Example/Doppelganger.xcworkspace -scheme Doppelganger-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- set -o pipefail && xcodebuild test -workspace Sample/DoppelgangerSample.xcworkspace -scheme "DoppelgangerSample" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 - pod lib lint --quick
