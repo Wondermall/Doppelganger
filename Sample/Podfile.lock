@@ -1,5 +1,5 @@
 PODS:
-  - Doppelganger (1.3)
+  - Doppelganger (1.3.1)
   - Expecta (0.3.2)
   - Specta (0.5.0)
 
@@ -20,7 +20,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/specta/specta.git
 
 SPEC CHECKSUMS:
-  Doppelganger: 8ab0b3e5a7829e04357ae45635e651d4d079a106
+  Doppelganger: 53f1811f64b8042bf268c11c86c0e3416c47ec97
   Expecta: 8c507baf13211207b1e9d0a741480600e6b4ed15
   Specta: eb90708ed77569bbda089f8ead10bb99b8e9489e
 
