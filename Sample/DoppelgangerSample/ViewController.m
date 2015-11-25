@@ -30,9 +30,9 @@
     NSArray *dataSource = [RowObject listOfRowObjects];
     NSArray *diffs = [WMLArrayDiffUtility diffForCurrentArray:dataSource previousArray:self.dataSource];
     self.dataSource = dataSource;
-    [self.tableView wml_applyBatchChanges:diffs
+    [self.tableView wml_applyBatchChangesForRows:diffs
                                 inSection:0
-                         withRowAnimation:UITableViewRowAnimationRight];
+                         withRowAnimation:UITableViewRowAnimationRight completion:nil];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self _generateDataSource];
     });
