@@ -16,6 +16,7 @@
 
 @interface UITableView (Doppelganger)
 
-- (void)wml_applyBatchChanges:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
+- (void)wml_applyBatchChangesForRows:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(void))completion;
+- (void)wml_applyBatchChangesForSections:(NSArray *)changes withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(void))completion;
 
 @end

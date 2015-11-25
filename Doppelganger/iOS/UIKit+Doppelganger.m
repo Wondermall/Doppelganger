@@ -52,7 +52,7 @@ static NSString *const WMLArrayDiffDestinationIndexPathKey = @"WMLArrayDiffDesti
 
 @implementation UITableView (Doppelganger)
 
-- (void)wml_applyBatchChanges:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation {
+- (void)wml_applyBatchChangesForRows:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(void))completion {
     NSMutableArray *insertion = [NSMutableArray array];
     NSMutableArray *deletion = [NSMutableArray array];
     NSMutableArray *moving = [NSMutableArray array];
@@ -76,10 +76,42 @@ static NSString *const WMLArrayDiffDestinationIndexPathKey = @"WMLArrayDiffDesti
     [self beginUpdates];
     [self deleteRowsAtIndexPaths:deletion withRowAnimation:animation];
     [self insertRowsAtIndexPaths:insertion withRowAnimation:animation];
-        for (WMLArrayDiff *diff in moving) {
-            [self moveRowAtIndexPath:[NSIndexPath indexPathForItem:diff.previousIndex inSection:section]
-                         toIndexPath:[NSIndexPath indexPathForItem:diff.currentIndex inSection:section]];
+    for (WMLArrayDiff *diff in moving) {
+        [self moveRowAtIndexPath:[NSIndexPath indexPathForItem:diff.previousIndex inSection:section]
+                     toIndexPath:[NSIndexPath indexPathForItem:diff.currentIndex inSection:section]];
+    }
+    [CATransaction setCompletionBlock:completion];
+    [self endUpdates];
+}
+
+- (void)wml_applyBatchChangesForSections:(NSArray *)changes withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(void))completion {
+    NSMutableIndexSet *insertion = [NSMutableIndexSet indexSet];
+    NSMutableIndexSet *deletion = [NSMutableIndexSet indexSet];
+    NSMutableArray *moving = [NSMutableArray array];
+    
+    for (WMLArrayDiff *diff in changes) {
+        switch (diff.type) {
+            case WMLArrayDiffTypeDelete:
+                [deletion addIndex:diff.previousIndex];
+                break;
+                
+            case WMLArrayDiffTypeInsert:
+                [insertion addIndex:diff.currentIndex];
+                break;
+                
+            case WMLArrayDiffTypeMove:
+                [moving addObject:diff];
+                break;
         }
+    }
+    
+    [self beginUpdates];
+    [self deleteSections:deletion withRowAnimation:animation];
+    [self insertSections:insertion withRowAnimation:animation];
+    for (WMLArrayDiff *diff in moving) {
+        [self moveSection:diff.previousIndex toSection:diff.currentIndex];
+    }
+    [CATransaction setCompletionBlock:completion];
     [self endUpdates];
 }
 
