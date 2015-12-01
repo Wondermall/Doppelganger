@@ -10,7 +10,8 @@
 
 @interface UICollectionView (Doppelganger)
 
-- (void)wml_applyBatchChanges:(NSArray *)changes inSection:(NSUInteger)section completion:(void (^)(BOOL finished))completion;
+- (void)wml_applyBatchChangesForRows:(NSArray *)changes inSection:(NSUInteger)section completion:(void (^)(BOOL))completion;
+- (void)wml_applyBatchChangesForSections:(NSArray *)changes completion:(void (^)(BOOL))completion;
 
 @end
 
