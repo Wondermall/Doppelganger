@@ -32,7 +32,7 @@
     self.dataSource = dataSource;
     [self.tableView wml_applyBatchChangesForRows:diffs
                                 inSection:0
-                         withRowAnimation:UITableViewRowAnimationRight completion:nil];
+                         withRowAnimation:UITableViewRowAnimationRight];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self _generateDataSource];
     });

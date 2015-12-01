@@ -52,7 +52,7 @@ static NSString *const WMLArrayDiffDestinationIndexPathKey = @"WMLArrayDiffDesti
 
 @implementation UITableView (Doppelganger)
 
-- (void)wml_applyBatchChangesForRows:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(void))completion {
+- (void)wml_applyBatchChangesForRows:(NSArray *)changes inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation {
     NSMutableArray *insertion = [NSMutableArray array];
     NSMutableArray *deletion = [NSMutableArray array];
     NSMutableArray *moving = [NSMutableArray array];
@@ -80,11 +80,10 @@ static NSString *const WMLArrayDiffDestinationIndexPathKey = @"WMLArrayDiffDesti
         [self moveRowAtIndexPath:[NSIndexPath indexPathForItem:diff.previousIndex inSection:section]
                      toIndexPath:[NSIndexPath indexPathForItem:diff.currentIndex inSection:section]];
     }
-    [CATransaction setCompletionBlock:completion];
     [self endUpdates];
 }
 
-- (void)wml_applyBatchChangesForSections:(NSArray *)changes withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(void))completion {
+- (void)wml_applyBatchChangesForSections:(NSArray *)changes withRowAnimation:(UITableViewRowAnimation)animation {
     NSMutableIndexSet *insertion = [NSMutableIndexSet indexSet];
     NSMutableIndexSet *deletion = [NSMutableIndexSet indexSet];
     NSMutableArray *moving = [NSMutableArray array];
@@ -111,7 +110,6 @@ static NSString *const WMLArrayDiffDestinationIndexPathKey = @"WMLArrayDiffDesti
     for (WMLArrayDiff *diff in moving) {
         [self moveSection:diff.previousIndex toSection:diff.currentIndex];
     }
-    [CATransaction setCompletionBlock:completion];
     [self endUpdates];
 }
 
