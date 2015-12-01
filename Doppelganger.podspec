@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Doppelganger"
-  s.version          = "1.3.1"
+  s.version          = "2.0.0"
   s.summary          = "Array diffs as collection view wants it."
   s.description      = <<-DESC
                         Are you still using `reloadData` with collection or table
