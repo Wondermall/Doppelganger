@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA467F9D1CBB712B00E24AB9 /* Doppelganger.h in Headers */ = {isa = PBXBuildFile; fileRef = EA467F9C1CBB712B00E24AB9 /* Doppelganger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA467FA91CBB720100E24AB9 /* WMLArrayDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = EA467FA41CBB720100E24AB9 /* WMLArrayDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA467FAA1CBB720100E24AB9 /* WMLArrayDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = EA467FA51CBB720100E24AB9 /* WMLArrayDiff.m */; };
+		EA467FAB1CBB720100E24AB9 /* WMLArrayDiff+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = EA467FA61CBB720100E24AB9 /* WMLArrayDiff+Creation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA467FAC1CBB720100E24AB9 /* WMLArrayDiffUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = EA467FA71CBB720100E24AB9 /* WMLArrayDiffUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA467FAD1CBB720100E24AB9 /* WMLArrayDiffUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA467FA81CBB720100E24AB9 /* WMLArrayDiffUtility.m */; };
+		EA467FB11CBB720700E24AB9 /* UIKit+Doppelganger.h in Headers */ = {isa = PBXBuildFile; fileRef = EA467FAF1CBB720700E24AB9 /* UIKit+Doppelganger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA467FB21CBB720700E24AB9 /* UIKit+Doppelganger.m in Sources */ = {isa = PBXBuildFile; fileRef = EA467FB01CBB720700E24AB9 /* UIKit+Doppelganger.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA467F991CBB712B00E24AB9 /* Doppelganger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Doppelganger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA467F9C1CBB712B00E24AB9 /* Doppelganger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Doppelganger.h; sourceTree = "<group>"; };
+		EA467F9E1CBB712B00E24AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA467FA41CBB720100E24AB9 /* WMLArrayDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLArrayDiff.h; sourceTree = "<group>"; };
+		EA467FA51CBB720100E24AB9 /* WMLArrayDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLArrayDiff.m; sourceTree = "<group>"; };
+		EA467FA61CBB720100E24AB9 /* WMLArrayDiff+Creation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMLArrayDiff+Creation.h"; sourceTree = "<group>"; };
+		EA467FA71CBB720100E24AB9 /* WMLArrayDiffUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLArrayDiffUtility.h; sourceTree = "<group>"; };
+		EA467FA81CBB720100E24AB9 /* WMLArrayDiffUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLArrayDiffUtility.m; sourceTree = "<group>"; };
+		EA467FAF1CBB720700E24AB9 /* UIKit+Doppelganger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Doppelganger.h"; sourceTree = "<group>"; };
+		EA467FB01CBB720700E24AB9 /* UIKit+Doppelganger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Doppelganger.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA467F951CBB712B00E24AB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA467F8F1CBB712B00E24AB9 = {
+			isa = PBXGroup;
+			children = (
+				EA467F9B1CBB712B00E24AB9 /* Doppelganger */,
+				EA467F9A1CBB712B00E24AB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA467F9A1CBB712B00E24AB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA467F991CBB712B00E24AB9 /* Doppelganger.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA467F9B1CBB712B00E24AB9 /* Doppelganger */ = {
+			isa = PBXGroup;
+			children = (
+				EA467F9C1CBB712B00E24AB9 /* Doppelganger.h */,
+				EA467FAE1CBB720700E24AB9 /* iOS */,
+				EA467FA41CBB720100E24AB9 /* WMLArrayDiff.h */,
+				EA467FA51CBB720100E24AB9 /* WMLArrayDiff.m */,
+				EA467FA61CBB720100E24AB9 /* WMLArrayDiff+Creation.h */,
+				EA467FA71CBB720100E24AB9 /* WMLArrayDiffUtility.h */,
+				EA467FA81CBB720100E24AB9 /* WMLArrayDiffUtility.m */,
+				EA467F9E1CBB712B00E24AB9 /* Info.plist */,
+			);
+			path = Doppelganger;
+			sourceTree = "<group>";
+		};
+		EA467FAE1CBB720700E24AB9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EA467FAF1CBB720700E24AB9 /* UIKit+Doppelganger.h */,
+				EA467FB01CBB720700E24AB9 /* UIKit+Doppelganger.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EA467F961CBB712B00E24AB9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA467FA91CBB720100E24AB9 /* WMLArrayDiff.h in Headers */,
+				EA467FB11CBB720700E24AB9 /* UIKit+Doppelganger.h in Headers */,
+				EA467F9D1CBB712B00E24AB9 /* Doppelganger.h in Headers */,
+				EA467FAB1CBB720100E24AB9 /* WMLArrayDiff+Creation.h in Headers */,
+				EA467FAC1CBB720100E24AB9 /* WMLArrayDiffUtility.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EA467F981CBB712B00E24AB9 /* Doppelganger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA467FA11CBB712B00E24AB9 /* Build configuration list for PBXNativeTarget "Doppelganger" */;
+			buildPhases = (
+				EA467F941CBB712B00E24AB9 /* Sources */,
+				EA467F951CBB712B00E24AB9 /* Frameworks */,
+				EA467F961CBB712B00E24AB9 /* Headers */,
+				EA467F971CBB712B00E24AB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Doppelganger;
+			productName = Doppelganger;
+			productReference = EA467F991CBB712B00E24AB9 /* Doppelganger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA467F901CBB712B00E24AB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Wondermall;
+				TargetAttributes = {
+					EA467F981CBB712B00E24AB9 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = EA467F931CBB712B00E24AB9 /* Build configuration list for PBXProject "Doppelganger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EA467F8F1CBB712B00E24AB9;
+			productRefGroup = EA467F9A1CBB712B00E24AB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA467F981CBB712B00E24AB9 /* Doppelganger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA467F971CBB712B00E24AB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA467F941CBB712B00E24AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA467FAD1CBB720100E24AB9 /* WMLArrayDiffUtility.m in Sources */,
+				EA467FB21CBB720700E24AB9 /* UIKit+Doppelganger.m in Sources */,
+				EA467FAA1CBB720100E24AB9 /* WMLArrayDiff.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EA467F9F1CBB712B00E24AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EA467FA01CBB712B00E24AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EA467FA21CBB712B00E24AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Doppelganger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wondermall.Doppelganger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EA467FA31CBB712B00E24AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Doppelganger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wondermall.Doppelganger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA467F931CBB712B00E24AB9 /* Build configuration list for PBXProject "Doppelganger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA467F9F1CBB712B00E24AB9 /* Debug */,
+				EA467FA01CBB712B00E24AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA467FA11CBB712B00E24AB9 /* Build configuration list for PBXNativeTarget "Doppelganger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA467FA21CBB712B00E24AB9 /* Debug */,
+				EA467FA31CBB712B00E24AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA467F901CBB712B00E24AB9 /* Project object */;
+}

@@ -67,6 +67,10 @@ it, simply add the following line to your Podfile:
 
     pod "Doppelganger"
 
+Or [Carthage](https://github.com/Carthage/CarthageA), add the following line to your Cartfile:
+
+    github "Wondermall/Doppelganger"
+
 ## Author
 
 Sash Zats, sash@zats.io
